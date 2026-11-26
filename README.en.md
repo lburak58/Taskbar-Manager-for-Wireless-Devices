@@ -85,7 +85,6 @@ The macOS version of the same app lives in the `macos/` folder; it shows battery
 - **Gatekeeper warning:** the app is not signed by Apple or notarized (ad-hoc signature), so macOS blocks the first launch. Run this once in Terminal: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"` — or try to open the app once, then click **Open Anyway** in **System Settings > Privacy & Security**.
 - **Demo mode:** run with the `--demo` argument or the `TMWD_DEMO=1` environment variable.
 - **Limitations:** only devices for which macOS reports a battery level are shown. The menu has Yenile (Refresh), the device list, Başlangıçta çalıştır (Run at startup) and Çıkış (Exit).
-- **Build from source:** `cd macos && swift build -c release` (or `scripts/build-app.sh`).
 
 ## License
 
