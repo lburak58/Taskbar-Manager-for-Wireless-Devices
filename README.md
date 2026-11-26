@@ -72,3 +72,7 @@ Klasörü başka yere taşırsanız seçeneği kapatıp yeniden açın. Başlang
 - **Cihazım görünmüyor:** Windows Ayarlar > Bluetooth ve cihazlar bölümünde cihazın pil yüzdesi görünüyor mu bakın. Orada yoksa bu araç da gösteremez. Görünüyorsa sağ tık menüsünden **Yenile**'yi deneyin.
 - **Uygulama açılmıyor:** Aynı anda yalnızca bir kopya çalışır. Zaten çalışıyorsa görev çubuğunda şeridi arayın veya Görev Yöneticisi'nden `powershell.exe` işlemini kapatıp tekrar deneyin.
 - **Simgeler kare görünüyor:** Segoe Fluent Icons veya Segoe MDL2 Assets yazı tipinin yüklü olduğunu denetleyin.
+
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.

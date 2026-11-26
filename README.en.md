@@ -72,3 +72,7 @@ If you move the folder elsewhere, turn the option off and on again. If the start
 - **My device is not shown:** Check whether the device's battery percentage is shown in Windows Settings > Bluetooth & devices. If it is not there, this tool cannot show it either. If it is, try **Yenile** (Refresh) from the right-click menu.
 - **The app does not start:** Only one copy runs at a time. If it is already running, look for the strip on the taskbar, or end the `powershell.exe` process in Task Manager and try again.
 - **Icons appear as squares:** Check that the Segoe Fluent Icons or Segoe MDL2 Assets font is installed.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
