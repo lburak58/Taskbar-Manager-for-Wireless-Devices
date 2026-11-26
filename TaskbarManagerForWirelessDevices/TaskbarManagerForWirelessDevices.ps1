@@ -531,6 +531,22 @@ function Remove-FallbackNotice {
     $script:Fallbacks.Remove($Pair)
 }
 
+# Toast XML metni. logo.png script klasorunde varsa appLogoOverride gorseli eklenir.
+function Get-LowBatteryToastXml {
+    param([string]$Title, [string]$Message)
+    $t = [System.Security.SecurityElement]::Escape($Title)
+    $m = [System.Security.SecurityElement]::Escape($Message)
+    $img = ''
+    try {
+        $logo = Join-Path $PSScriptRoot 'logo.png'
+        if (Test-Path -LiteralPath $logo -PathType Leaf) {
+            $uri = [System.Security.SecurityElement]::Escape(([System.Uri]$logo).AbsoluteUri)
+            $img = "<image placement=""appLogoOverride"" hint-crop=""none"" src=""$uri""/>"
+        }
+    } catch { $img = '' }
+    return "<toast><visual><binding template=""ToastGeneric"">$img<text>$t</text><text>$m</text></binding></visual></toast>"
+}
+
 # Windows toast; olmazsa gecici NotifyIcon balonu (10 sn sonra kaldirilir). Donus: 'toast' | 'fallback'
 function Show-LowBatteryNotice {
     param([string]$Title, [string]$Message)
@@ -540,7 +556,7 @@ function Show-LowBatteryNotice {
         $t = [System.Security.SecurityElement]::Escape($Title)
         $m = [System.Security.SecurityElement]::Escape($Message)
         $xml = New-Object Windows.Data.Xml.Dom.XmlDocument
-        $xml.LoadXml("<toast><visual><binding template=""ToastGeneric""><text>$t</text><text>$m</text></binding></visual></toast>")
+        $xml.LoadXml((Get-LowBatteryToastXml -Title $Title -Message $Message))
         $toast = New-Object Windows.UI.Notifications.ToastNotification($xml)
         [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($script:ToastAppId).Show($toast)
         return 'toast'
