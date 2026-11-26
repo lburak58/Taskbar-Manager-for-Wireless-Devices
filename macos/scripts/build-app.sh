@@ -2,12 +2,25 @@
 # Evrensel (arm64 + x86_64) .app uretir, ad-hoc imzalar ve zip'ler.
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+cd "$SCRIPT_DIR/.."
+
+# Surum: APP_VERSION > CHANGELOG.md'deki ilk "## [x.y.z]" basligi > 0.0.0
+changelog_version() {
+  sed -n 's/^## \[\([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\)\].*/\1/p' "$1" 2>/dev/null | head -n 1
+}
 
 EXE="TaskbarManagerForWirelessDevices"
 APP_NAME="Taskbar Manager for Wireless Devices"
 BUNDLE_ID="io.github.lburak58.TaskbarManagerForWirelessDevices"
-VERSION="${APP_VERSION:-1.0.0}"
+VERSION="${APP_VERSION:-$(changelog_version "$REPO_ROOT/CHANGELOG.md")}"
+VERSION="${VERSION:-0.0.0}"
+if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "Gecersiz surum: '$VERSION' (beklenen x.y.z)" >&2
+  exit 1
+fi
+echo "Surum: $VERSION"
 DIST="dist"
 APP="$DIST/$APP_NAME.app"
 ZIP="$DIST/${EXE}-macOS.zip"

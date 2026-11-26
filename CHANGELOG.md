@@ -3,6 +3,10 @@
 Bu projedeki önemli değişiklikler bu dosyada tutulur.
 ## [Unreleased]
 
+### Düzeltilen · Fixed
+
+- macOS uygulamasının sürüm numarası artık CHANGELOG'dan alınır (önceden hep 1.0.0 görünüyordu) · The macOS app version is now taken from the CHANGELOG (it previously always showed 1.0.0)
+
 ## [1.1.1] - 2026-11-26
 
 ### Eklenen · Added

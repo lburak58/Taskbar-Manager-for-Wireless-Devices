@@ -37,6 +37,13 @@ jobs:
       - name: Info.plist dogrula
         run: plutil -lint "dist/Taskbar Manager for Wireless Devices.app/Contents/Info.plist"
 
+      - name: Surum kontrolu (CHANGELOG ile eslesmeli)
+        run: |
+          GOT="$(plutil -extract CFBundleShortVersionString raw "dist/Taskbar Manager for Wireless Devices.app/Contents/Info.plist")"
+          EXPECTED="$(sed -n 's/^## \[\([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\)\].*/\1/p' ../CHANGELOG.md | head -n 1)"
+          echo "CFBundleShortVersionString=$GOT beklenen=$EXPECTED"
+          [ -n "$EXPECTED" ] && [ "$GOT" = "$EXPECTED" ]
+
       - name: Mimari kontrolu
         run: lipo -info "dist/Taskbar Manager for Wireless Devices.app/Contents/MacOS/TaskbarManagerForWirelessDevices"
 
