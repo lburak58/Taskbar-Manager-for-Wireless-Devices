@@ -74,6 +74,10 @@ If you move the folder elsewhere, turn the option off and on again. If the start
 
 ## macOS
 
+![Taskbar Manager for Wireless Devices – macOS](docs/screenshot-macos.png)
+
+*Demo mode: macOS menu bar*
+
 The macOS version of the same app lives in the `macos/` folder; it shows battery percentages in the menu bar.
 
 - **Requirements:** macOS 13 or later (Apple Silicon and Intel).

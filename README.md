@@ -74,6 +74,10 @@ Klasörü başka yere taşırsanız seçeneği kapatıp yeniden açın. Başlang
 
 ## macOS
 
+![Taskbar Manager for Wireless Devices – macOS](docs/screenshot-macos.png)
+
+*Demo modu: macOS menü çubuğu*
+
 Aynı uygulamanın macOS sürümü `macos/` klasöründedir; pil yüzdelerini menü çubuğunda gösterir.
 
 - **Gereksinim:** macOS 13 veya üstü (Apple Silicon ve Intel).

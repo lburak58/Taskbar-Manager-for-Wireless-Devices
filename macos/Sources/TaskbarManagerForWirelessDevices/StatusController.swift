@@ -108,6 +108,15 @@ final class StatusController: NSObject, NSMenuDelegate {
         guard let button = statusItem.button else { return }
         let font = NSFont.menuBarFont(ofSize: 0)
         setToolTip(devices.isEmpty ? Strings.appName : Formatting.tooltip(devices))
+        if ProcessInfo.processInfo.environment["TMWD_DEBUG"] == "1" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak button] in
+                guard let w = button?.window, let screen = w.screen else { return }
+                let f = w.frame
+                let top = screen.frame.maxY - f.maxY
+                let line = "buttonframe=\(Int(f.minX)),\(Int(top)),\(Int(f.width)),\(Int(f.height)) scale=\(screen.backingScaleFactor)\n"
+                FileHandle.standardError.write(Data(line.utf8))
+            }
+        }
 
         if devices.isEmpty {
             // Cihaz yok: soluk Bluetooth/radyo simgesi
