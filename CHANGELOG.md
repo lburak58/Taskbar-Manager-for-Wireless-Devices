@@ -1,9 +1,6 @@
 # Changelog · Değişiklik Günlüğü
 
-Bu projedeki önemli değişiklikler bu dosyada tutulur. Biçim [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) esas alınarak hazırlanmıştır ve proje [Semantic Versioning](https://semver.org/spec/v2.0.0.html) kullanır.
-
-All notable changes to this project are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
+Bu projedeki önemli değişiklikler bu dosyada tutulur.
 ## [Unreleased]
 
 ### Eklenen · Added
@@ -25,7 +22,3 @@ All notable changes to this project are documented in this file. The format is b
 - Sağ tık menüsü: Yenile, cihaz listesi, Başlangıçta çalıştır, Çıkış · Right-click menu: Refresh, device list, Run at startup, Exit
 - 60 saniyede bir otomatik yenileme · Automatic refresh every 60 seconds
 - Sahte cihazlarla deneme için `-Demo` modu · `-Demo` mode with sample devices
-- Türkçe ve İngilizce README, ekran görüntüsü ve MIT lisansı · Turkish and English README, screenshot and MIT license
-
-[Unreleased]: https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/tag/v1.0.0
