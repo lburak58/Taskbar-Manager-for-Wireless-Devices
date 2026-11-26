@@ -1,5 +1,7 @@
 # Taskbar Manager for Wireless Devices
 
+🇹🇷 Türkçe | [🇬🇧 English](README.en.md)
+
 Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz türü simgesinin yanında gösteren küçük bir araç.
 
 ## Özellikler
