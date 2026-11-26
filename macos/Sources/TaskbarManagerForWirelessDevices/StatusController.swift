@@ -2,7 +2,7 @@ import AppKit
 import TMWDCore
 
 /// Tek NSStatusItem; tum UI islemleri ana thread'de, sorgular arka planda.
-final class StatusController: NSObject {
+final class StatusController: NSObject, NSMenuDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let menu = NSMenu()
     private let demo: Bool
@@ -16,8 +16,14 @@ final class StatusController: NSObject {
     init(demo: Bool) {
         self.demo = demo
         super.init()
-        statusItem.menu = menu
-        statusItem.button?.toolTip = Strings.appName
+        // statusItem.menu kalici atanirsa AppKit hover tooltip'ini gostermez; menu yalnizca tiklamada baglanir.
+        menu.delegate = self
+        if let button = statusItem.button {
+            button.target = self
+            button.action = #selector(statusClicked(_:))
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        }
+        setToolTip(Strings.appName)
         rebuildMenu()
         render()
     }
@@ -75,10 +81,33 @@ final class StatusController: NSObject {
         return NSAttributedString(attachment: a)
     }
 
+    private var currentToolTip = ""
+
+    /// Deger degismediyse yeniden atama (izleme alanini sifirlamasin).
+    private func setToolTip(_ text: String) {
+        guard let button = statusItem.button, text != currentToolTip || button.toolTip != text else { return }
+        currentToolTip = text
+        button.toolTip = text
+        if ProcessInfo.processInfo.environment["TMWD_DEBUG"] == "1" {
+            let line = "tooltip=" + text.replacingOccurrences(of: "\n", with: " | ") + "\n"
+            FileHandle.standardError.write(Data(line.utf8))
+        }
+    }
+
+    @objc private func statusClicked(_ sender: Any?) {
+        statusItem.menu = menu
+        statusItem.button?.performClick(nil)
+    }
+
+    func menuDidClose(_ menu: NSMenu) {
+        // Menu kapaninca baglantiyi kes: tooltip tekrar calisir.
+        DispatchQueue.main.async { [weak self] in self?.statusItem.menu = nil }
+    }
+
     private func render() {
         guard let button = statusItem.button else { return }
         let font = NSFont.menuBarFont(ofSize: 0)
-        button.toolTip = devices.isEmpty ? Strings.appName : Formatting.tooltip(devices)
+        setToolTip(devices.isEmpty ? Strings.appName : Formatting.tooltip(devices))
 
         if devices.isEmpty {
             // Cihaz yok: soluk Bluetooth/radyo simgesi
