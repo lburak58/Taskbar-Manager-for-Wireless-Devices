@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/logo.png" width="160" alt="Taskbar Manager for Wireless Devices"></p>
+<p align="center"><img src="docs/social-preview.png" alt="Taskbar Manager for Wireless Devices" width="100%"></p>
 
 # Taskbar Manager for Wireless Devices
 
