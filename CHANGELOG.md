@@ -3,6 +3,8 @@
 Bu projedeki önemli değişiklikler bu dosyada tutulur.
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-26
+
 ### Eklenen · Added
 
 - Uygulama logosu: macOS uygulama simgesi, Windows düşük pil bildirimi ve README · App logo: macOS app icon, Windows low-battery notification and README
