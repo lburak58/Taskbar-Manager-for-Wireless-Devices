@@ -44,6 +44,14 @@ jobs:
           echo "CFBundleShortVersionString=$GOT beklenen=$EXPECTED"
           [ -n "$EXPECTED" ] && [ "$GOT" = "$EXPECTED" ]
 
+      - name: Simge kontrolu (AppIcon.icns + CFBundleIconFile)
+        run: |
+          APP="dist/Taskbar Manager for Wireless Devices.app"
+          test -s "$APP/Contents/Resources/AppIcon.icns"
+          ICON="$(plutil -extract CFBundleIconFile raw "$APP/Contents/Info.plist")"
+          echo "CFBundleIconFile=$ICON"
+          [ "$ICON" = "AppIcon" ]
+
       - name: Mimari kontrolu
         run: lipo -info "dist/Taskbar Manager for Wireless Devices.app/Contents/MacOS/TaskbarManagerForWirelessDevices"
 

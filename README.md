@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/logo.png" width="160" alt="Taskbar Manager for Wireless Devices"></p>
+
 # Taskbar Manager for Wireless Devices
 
 🇹🇷 Türkçe | [🇬🇧 English](README.en.md)
