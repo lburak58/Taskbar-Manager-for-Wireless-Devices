@@ -6,6 +6,8 @@
 
 *Demo mode: keyboard, headphones, mouse (low battery) and game controller*
 
+**[⬇️ Download the latest release](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest)**
+
 A small tool that shows the battery percentage of your Bluetooth devices on the Windows taskbar, next to an icon for the device type.
 
 ## Features
@@ -28,7 +30,7 @@ A small tool that shows the battery percentage of your Bluetooth devices on the 
 
 ## Installation and usage
 
-1. Download the repository (Code > Download ZIP) or clone it. Put the `TaskbarManagerForWirelessDevices` folder wherever you like.
+1. Download the `.zip` file from the [latest release page](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) and extract it (or clone the repository). Put the `TaskbarManagerForWirelessDevices` folder wherever you like.
 2. Double-click the `Start.vbs` file in the folder. No console window opens; the strip appears on the taskbar.
 
 From the command line:

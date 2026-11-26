@@ -6,6 +6,8 @@
 
 *Demo modu: klavye, kulaklık, mouse (düşük pil) ve oyun kumandası*
 
+**[⬇️ Son sürümü indir](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest)**
+
 Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz türü simgesinin yanında gösteren küçük bir araç.
 
 ## Özellikler
@@ -28,7 +30,7 @@ Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz tü
 
 ## Kurulum ve çalıştırma
 
-1. Depoyu indirin (Code > Download ZIP) veya klonlayın. `TaskbarManagerForWirelessDevices` klasörünü istediğiniz yere koyun.
+1. [Son sürüm sayfasından](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) `.zip` dosyasını indirip açın (ya da depoyu klonlayın). `TaskbarManagerForWirelessDevices` klasörünü istediğiniz yere koyun.
 2. Klasördeki `Start.vbs` dosyasına çift tıklayın. Konsol penceresi açılmaz; şerit görev çubuğunda belirir.
 
 Komut satırından:
