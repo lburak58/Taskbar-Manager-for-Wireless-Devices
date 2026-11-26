@@ -2,6 +2,10 @@
 
 🇹🇷 Türkçe | [🇬🇧 English](README.en.md)
 
+![Taskbar Manager for Wireless Devices](docs/screenshot.png)
+
+*Demo modu: klavye, kulaklık, mouse (düşük pil) ve oyun kumandası*
+
 Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz türü simgesinin yanında gösteren küçük bir araç.
 
 ## Özellikler

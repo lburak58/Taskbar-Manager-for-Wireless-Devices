@@ -2,6 +2,10 @@
 
 [🇹🇷 Türkçe](README.md) | 🇬🇧 English
 
+![Taskbar Manager for Wireless Devices](docs/screenshot.png)
+
+*Demo mode: keyboard, headphones, mouse (low battery) and game controller*
+
 A small tool that shows the battery percentage of your Bluetooth devices on the Windows taskbar, next to an icon for the device type.
 
 ## Features
