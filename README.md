@@ -85,7 +85,6 @@ Aynı uygulamanın macOS sürümü `macos/` klasöründedir; pil yüzdelerini me
 - **Gatekeeper uyarısı:** Uygulama Apple tarafından imzalanmamış/noter onaylı değildir (ad-hoc imza), bu yüzden macOS ilk açılışı engeller. Terminal'de şunu bir kez çalıştırın: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"` — ya da uygulamayı bir kez açmayı deneyip **Sistem Ayarları > Gizlilik ve Güvenlik** bölümünde **Yine de Aç**'a basın.
 - **Demo modu:** `--demo` argümanıyla ya da `TMWD_DEMO=1` ortam değişkeniyle çalıştırın.
 - **Kısıtlar:** Yalnızca macOS'un pil düzeyini bildirdiği cihazlar görünür. Menüde Yenile, cihaz listesi, Başlangıçta çalıştır ve Çıkış bulunur.
-- **Kaynaktan derleme:** `cd macos && swift build -c release` (ya da `scripts/build-app.sh`).
 
 ## Lisans
 
