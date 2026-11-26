@@ -24,7 +24,7 @@ Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda (Windows 1
 
 ## Kurulum ve çalıştırma
 
-1. [Son sürüm sayfasından](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) `.zip` dosyasını indirip açın (ya da depoyu klonlayın). `TaskbarManagerForWirelessDevices` klasörünü istediğiniz yere koyun.
+1. [Son sürüm sayfasından](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) Windows zip'ini (`TaskbarManagerForWirelessDevices-Windows-…zip`) indirip açın (ya da depoyu klonlayın). `TaskbarManagerForWirelessDevices` klasörünü istediğiniz yere koyun.
 2. Klasördeki `Start.vbs` dosyasına çift tıklayın. Konsol penceresi açılmaz; şerit görev çubuğunda belirir.
 
 Komut satırından:
@@ -77,8 +77,8 @@ Klasörü başka yere taşırsanız seçeneği kapatıp yeniden açın. Başlang
 Aynı uygulamanın macOS sürümü `macos/` klasöründedir; pil yüzdelerini menü çubuğunda gösterir.
 
 - **Gereksinim:** macOS 13 veya üstü (Apple Silicon ve Intel).
-- **İndirme:** GitHub'da **Actions > macOS** iş akışının son başarılı çalışmasındaki `TaskbarManagerForWirelessDevices-macOS` çıktısını indirip açın (ya da sonraki sürüm sayfasındaki zip). `Taskbar Manager for Wireless Devices.app` dosyasını Uygulamalar klasörüne taşıyın.
-- **Gatekeeper uyarısı:** Uygulama Apple tarafından imzalanmamış/noter onaylı değildir (ad-hoc imza). İlk açılışta sağ tık > **Aç** deyin ya da Terminal'de şunu çalıştırın: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"`
+- **İndirme:** [Son sürüm sayfasından](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) macOS zip'ini (`TaskbarManagerForWirelessDevices-macOS-…zip`) indirip açın. `Taskbar Manager for Wireless Devices.app` dosyasını Uygulamalar klasörüne taşıyın.
+- **Gatekeeper uyarısı:** Uygulama Apple tarafından imzalanmamış/noter onaylı değildir (ad-hoc imza), bu yüzden macOS ilk açılışı engeller. Terminal'de şunu bir kez çalıştırın: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"` — ya da uygulamayı bir kez açmayı deneyip **Sistem Ayarları > Gizlilik ve Güvenlik** bölümünde **Yine de Aç**'a basın.
 - **Demo modu:** `--demo` argümanıyla ya da `TMWD_DEMO=1` ortam değişkeniyle çalıştırın.
 - **Kısıtlar:** Yalnızca macOS'un pil düzeyini bildirdiği cihazlar görünür. Menüde Yenile, cihaz listesi, Başlangıçta çalıştır ve Çıkış bulunur.
 - **Kaynaktan derleme:** `cd macos && swift build -c release` (ya da `scripts/build-app.sh`).

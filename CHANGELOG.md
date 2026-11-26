@@ -3,8 +3,13 @@
 Bu projedeki önemli değişiklikler bu dosyada tutulur.
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-26
+
 ### Eklenen · Added
 
+- macOS sürümü (macOS 13+, Apple Silicon ve Intel): pil yüzdeleri menü çubuğunda, cihaz türü simgesinin yanında · macOS version (macOS 13+, Apple Silicon and Intel): battery percentages in the menu bar, next to a device-type icon
+- macOS'ta AirPods için sol, sağ ve kutu pil düzeyleri (menü çubuğunda en düşüğü, ipucunda ayrıntı) · AirPods left, right and case battery levels on macOS (lowest in the menu bar, details in the tooltip)
+- Sürüm sayfasında ayrı Windows ve macOS zip'leri · Separate Windows and macOS zips on the release page
 - README'lere son sürümü indirme bağlantısı · Download link to the latest release in the READMEs
 - Bu değişiklik günlüğü · This changelog
 

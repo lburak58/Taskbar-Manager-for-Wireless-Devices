@@ -24,7 +24,7 @@ A small tool that shows the battery percentage of your Bluetooth devices on the 
 - 
 ## Installation and usage
 
-1. Download the `.zip` file from the [latest release page](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) and extract it (or clone the repository). Put the `TaskbarManagerForWirelessDevices` folder wherever you like.
+1. Download the Windows zip (`TaskbarManagerForWirelessDevices-Windows-…zip`) from the [latest release page](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) and extract it (or clone the repository). Put the `TaskbarManagerForWirelessDevices` folder wherever you like.
 2. Double-click the `Start.vbs` file in the folder. No console window opens; the strip appears on the taskbar.
 
 From the command line:
@@ -77,8 +77,8 @@ If you move the folder elsewhere, turn the option off and on again. If the start
 The macOS version of the same app lives in the `macos/` folder; it shows battery percentages in the menu bar.
 
 - **Requirements:** macOS 13 or later (Apple Silicon and Intel).
-- **Download:** on GitHub, open the latest successful run of the **Actions > macOS** workflow and download the `TaskbarManagerForWirelessDevices-macOS` artifact (or the zip on a later release page). Unzip it and move `Taskbar Manager for Wireless Devices.app` to Applications.
-- **Gatekeeper warning:** the app is not signed by Apple or notarized (ad-hoc signature). On first launch, right-click > **Open**, or run this in Terminal: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"`
+- **Download:** download the macOS zip (`TaskbarManagerForWirelessDevices-macOS-…zip`) from the [latest release page](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest), unzip it and move `Taskbar Manager for Wireless Devices.app` to Applications.
+- **Gatekeeper warning:** the app is not signed by Apple or notarized (ad-hoc signature), so macOS blocks the first launch. Run this once in Terminal: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"` — or try to open the app once, then click **Open Anyway** in **System Settings > Privacy & Security**.
 - **Demo mode:** run with the `--demo` argument or the `TMWD_DEMO=1` environment variable.
 - **Limitations:** only devices for which macOS reports a battery level are shown. The menu has Yenile (Refresh), the device list, Başlangıçta çalıştır (Run at startup) and Çıkış (Exit).
 - **Build from source:** `cd macos && swift build -c release` (or `scripts/build-app.sh`).
