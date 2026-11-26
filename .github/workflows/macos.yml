@@ -1,0 +1,65 @@
+name: macOS
+
+on:
+  push:
+    paths:
+      - 'macos/**'
+      - '.github/workflows/macos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: macos
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Swift surumu
+        run: swift --version
+
+      - name: swift build
+        run: swift build
+
+      - name: swift test
+        run: swift test
+
+      - name: Uygulamayi paketle (universal, ad-hoc imza)
+        run: bash scripts/build-app.sh
+
+      - name: codesign dogrula
+        run: codesign --verify --deep --strict --verbose=2 "dist/Taskbar Manager for Wireless Devices.app"
+
+      - name: Info.plist dogrula
+        run: plutil -lint "dist/Taskbar Manager for Wireless Devices.app/Contents/Info.plist"
+
+      - name: Mimari kontrolu
+        run: lipo -info "dist/Taskbar Manager for Wireless Devices.app/Contents/MacOS/TaskbarManagerForWirelessDevices"
+
+      - name: Demo modunda 5 sn ayakta mi
+        env:
+          TMWD_DEBUG: "1"
+        run: |
+          "dist/Taskbar Manager for Wireless Devices.app/Contents/MacOS/TaskbarManagerForWirelessDevices" --demo 2>"$RUNNER_TEMP/tmwd.err" &
+          PID=$!
+          sleep 5
+          if kill -0 "$PID" 2>/dev/null; then
+            echo "Surec 5 sn sonra hala ayakta"
+            kill "$PID"
+            cat "$RUNNER_TEMP/tmwd.err"
+            grep -q "tooltip=Klavye – 50%" "$RUNNER_TEMP/tmwd.err" || { echo "tooltip bos/yok"; exit 1; }
+          else
+            wait "$PID" || echo "Surec erken cikti, kod: $?"
+            exit 1
+          fi
+
+      - name: Artifact yukle
+        uses: actions/upload-artifact@v4
+        with:
+          name: TaskbarManagerForWirelessDevices-macOS
+          path: macos/dist/TaskbarManagerForWirelessDevices-macOS.zip
+          if-no-files-found: error

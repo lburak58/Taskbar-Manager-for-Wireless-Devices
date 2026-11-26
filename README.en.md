@@ -8,7 +8,7 @@
 
 **[⬇️ Download the latest release](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest)**
 
-A small tool that shows the battery percentage of your Bluetooth devices on the Windows taskbar, next to an icon for the device type.
+A small tool that shows the battery percentage of your Bluetooth devices on the Windows taskbar (Windows 11 and macOS 13+; on macOS, in the menu bar), next to an icon for the device type.
 
 ## Features
 
@@ -71,6 +71,17 @@ If you move the folder elsewhere, turn the option off and on again. If the start
 - **My device is not shown:** Check whether the device's battery percentage is shown in Windows Settings > Bluetooth & devices. If it is not there, this tool cannot show it either. If it is, try **Yenile** (Refresh) from the right-click menu.
 - **The app does not start:** Only one copy runs at a time. If it is already running, look for the strip on the taskbar, or end the `powershell.exe` process in Task Manager and try again.
 - **Icons appear as squares:** Check that the Segoe Fluent Icons or Segoe MDL2 Assets font is installed.
+
+## macOS
+
+The macOS version of the same app lives in the `macos/` folder; it shows battery percentages in the menu bar.
+
+- **Requirements:** macOS 13 or later (Apple Silicon and Intel).
+- **Download:** on GitHub, open the latest successful run of the **Actions > macOS** workflow and download the `TaskbarManagerForWirelessDevices-macOS` artifact (or the zip on a later release page). Unzip it and move `Taskbar Manager for Wireless Devices.app` to Applications.
+- **Gatekeeper warning:** the app is not signed by Apple or notarized (ad-hoc signature). On first launch, right-click > **Open**, or run this in Terminal: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"`
+- **Demo mode:** run with the `--demo` argument or the `TMWD_DEMO=1` environment variable.
+- **Limitations:** only devices for which macOS reports a battery level are shown. The menu has Yenile (Refresh), the device list, Başlangıçta çalıştır (Run at startup) and Çıkış (Exit).
+- **Build from source:** `cd macos && swift build -c release` (or `scripts/build-app.sh`).
 
 ## License
 

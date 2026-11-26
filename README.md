@@ -8,7 +8,7 @@
 
 **[⬇️ Son sürümü indir](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest)**
 
-Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz türü simgesinin yanında gösteren küçük bir araç.
+Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda (Windows 11 ve macOS 13+; macOS'ta menü çubuğunda), cihaz türü simgesinin yanında gösteren küçük bir araç.
 
 ## Özellikler
 
@@ -71,6 +71,17 @@ Klasörü başka yere taşırsanız seçeneği kapatıp yeniden açın. Başlang
 - **Cihazım görünmüyor:** Windows Ayarlar > Bluetooth ve cihazlar bölümünde cihazın pil yüzdesi görünüyor mu bakın. Orada yoksa bu araç da gösteremez. Görünüyorsa sağ tık menüsünden **Yenile**'yi deneyin.
 - **Uygulama açılmıyor:** Aynı anda yalnızca bir kopya çalışır. Zaten çalışıyorsa görev çubuğunda şeridi arayın veya Görev Yöneticisi'nden `powershell.exe` işlemini kapatıp tekrar deneyin.
 - **Simgeler kare görünüyor:** Segoe Fluent Icons veya Segoe MDL2 Assets yazı tipinin yüklü olduğunu denetleyin.
+
+## macOS
+
+Aynı uygulamanın macOS sürümü `macos/` klasöründedir; pil yüzdelerini menü çubuğunda gösterir.
+
+- **Gereksinim:** macOS 13 veya üstü (Apple Silicon ve Intel).
+- **İndirme:** GitHub'da **Actions > macOS** iş akışının son başarılı çalışmasındaki `TaskbarManagerForWirelessDevices-macOS` çıktısını indirip açın (ya da sonraki sürüm sayfasındaki zip). `Taskbar Manager for Wireless Devices.app` dosyasını Uygulamalar klasörüne taşıyın.
+- **Gatekeeper uyarısı:** Uygulama Apple tarafından imzalanmamış/noter onaylı değildir (ad-hoc imza). İlk açılışta sağ tık > **Aç** deyin ya da Terminal'de şunu çalıştırın: `xattr -dr com.apple.quarantine "/Applications/Taskbar Manager for Wireless Devices.app"`
+- **Demo modu:** `--demo` argümanıyla ya da `TMWD_DEMO=1` ortam değişkeniyle çalıştırın.
+- **Kısıtlar:** Yalnızca macOS'un pil düzeyini bildirdiği cihazlar görünür. Menüde Yenile, cihaz listesi, Başlangıçta çalıştır ve Çıkış bulunur.
+- **Kaynaktan derleme:** `cd macos && swift build -c release` (ya da `scripts/build-app.sh`).
 
 ## Lisans
 
