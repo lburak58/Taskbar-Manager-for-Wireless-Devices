@@ -3,6 +3,13 @@
 Bu projedeki önemli değişiklikler bu dosyada tutulur.
 ## [Unreleased]
 
+## [1.1.1] - 2026-11-26
+
+### Eklenen · Added
+
+- README'lere macOS menü çubuğu ekran görüntüsü · macOS menu bar screenshot in the READMEs
+- macOS: `TMWD_DEBUG=1` ayarlıyken menü çubuğu öğesinin ekrandaki konumu hata ayıklama çıktısına yazılır · macOS: with `TMWD_DEBUG=1` set, the menu bar item's on-screen position is written to the debug output
+
 ## [1.1.0] - 2026-11-26
 
 ### Eklenen · Added
