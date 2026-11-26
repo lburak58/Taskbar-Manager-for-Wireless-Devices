@@ -22,12 +22,6 @@ Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz tü
 - Bilgiler 60 saniyede bir yenilenir.
 - Kurulum gerektirmez; yalnızca iki dosyadan oluşur.
 
-## Gereksinimler
-
-- Windows 11
-- Windows PowerShell 5.1 (Windows ile birlikte gelir)
-- Segoe Fluent Icons veya Segoe MDL2 Assets yazı tipi (Windows ile birlikte gelir)
-
 ## Kurulum ve çalıştırma
 
 1. [Son sürüm sayfasından](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) `.zip` dosyasını indirip açın (ya da depoyu klonlayın). `TaskbarManagerForWirelessDevices` klasörünü istediğiniz yere koyun.
@@ -69,7 +63,6 @@ Klasörü başka yere taşırsanız seçeneği kapatıp yeniden açın. Başlang
 
 - Yalnızca pil düzeyini Windows'a bildiren Bluetooth cihazlar görünür (`DEVPKEY_Bluetooth_Battery`). Bazı cihazlar bu bilgiyi vermez; bunlar listede çıkmaz.
 - Görev çubuğu dikey konumdaysa veya otomatik gizleniyorsa şerit gizlenir.
-- Açık tema desteği yoktur; yazı ve simgeler her zaman beyazdır.
 - Hiç uygun cihaz yoksa şeritte soluk bir Bluetooth simgesi kalır (menüye erişmek için).
 
 ## Sorun giderme
