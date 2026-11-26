@@ -6,7 +6,7 @@ Bluetooth cihazlarınızın pil yüzdesini Windows görev çubuğunda, cihaz tü
 
 - Cihaz türüne göre simge: kulaklık/hoparlör, mouse, klavye, oyun kumandası, telefon, kalem ve bilinmeyen cihazlar için genel Bluetooth simgesi.
 - Simgenin yanında pil yüzdesi; tek renk (beyaz) ve sade görünüm.
-- Pil %20'nin altına düşünce uyarı işareti ve Windows bildirimi (cihaz başına bir kez).
+- Pil %20'nin altına düşünce uyarı işareti ve Windows bildirimi (her düşüşte bir kez; pil %20'nin üstüne çıkıp yeniden düşerse tekrar uyarır).
 - Çok ekran desteği: her görev çubuğunda ayrı bir şerit gösterilir.
 - Bir ekranda tam ekran uygulama açıksa şerit yalnızca o ekranda gizlenir.
 - Simgenin üzerine gelince cihaz adı ve pil yüzdesi görünür.
