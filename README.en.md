@@ -21,13 +21,7 @@ A small tool that shows the battery percentage of your Bluetooth devices on the 
 - Right-click menu: Yenile (Refresh), device list, Başlangıçta çalıştır (Run at startup), Çıkış (Exit).
 - Information is refreshed every 60 seconds.
 - No installation required; it consists of just two files.
-
-## Requirements
-
-- Windows 11
-- Windows PowerShell 5.1 (included with Windows)
-- Segoe Fluent Icons or Segoe MDL2 Assets font (included with Windows)
-
+- 
 ## Installation and usage
 
 1. Download the `.zip` file from the [latest release page](https://github.com/lburak58/Taskbar-Manager-for-Wireless-Devices/releases/latest) and extract it (or clone the repository). Put the `TaskbarManagerForWirelessDevices` folder wherever you like.
@@ -69,7 +63,6 @@ If you move the folder elsewhere, turn the option off and on again. If the start
 
 - Only Bluetooth devices that report their battery level to Windows are shown (`DEVPKEY_Bluetooth_Battery`). Some devices do not provide this information; they do not appear in the list.
 - If the taskbar is vertical or set to auto-hide, the strip is hidden.
-- There is no light theme support; text and icons are always white.
 - If there is no suitable device, a faded Bluetooth icon remains on the strip (to give access to the menu).
 
 ## Troubleshooting
